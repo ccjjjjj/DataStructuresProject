@@ -8,6 +8,10 @@ public class Tester {
         Data.generateBestCase(10000, "res/10KBestCase.csv");
         // Data.generateWorstCase(10000, "res/10KWorstCase.csv");
         // Data.generateAverageCase(10000, "res/10KAverageCase.csv");
+        
+        Data.generateBestCase(200000, "res/200KBestCase.csv");
+        Data.generateWorstCase(200000, "res/200KWorstCase.csv");
+        Data.generateAverageCase(200000, "res/200KAverageCase.csv");
         // Do the same for the 200K, 500K and 1M datasets
     }
 
@@ -21,6 +25,14 @@ public class Tester {
         int[] sortedBestCase10k;
         int[] sortedWorstCase10k;
         int[] sortedAverageCase10k;
+        
+        List<Integer> tempp;
+        int[] bestCase200k;
+        int[] worstCase200k;
+        int[] averageCase200k;
+        int[] sortedBestCase200k;
+        int[] sortedWorstCase200k;
+        int[] sortedAverageCase200k;
 
         // Convert List<Integer> to int[]
         temp = Data.parse("res/10KBestCase.csv");
@@ -40,12 +52,34 @@ public class Tester {
                 .stream()
                 .mapToInt(Integer::intValue)
                 .toArray();
+        
+        tempp = Data.parse("res/200KBestCase.csv");
+        bestCase200k = temp
+                .stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+        
+        tempp = Data.parse("res/200KWorstCase.csv");
+        worstCase200k = temp
+                .stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+
+        tempp = Data.parse("res/200KAverageCase.csv");
+        averageCase200k = temp
+                .stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
 
         // Clone the original unsorted array
         // work with the clone
         sortedBestCase10k = bestCase10k.clone();
         sortedWorstCase10k = worstCase10k.clone();
         sortedAverageCase10k = averageCase10k.clone();
+        
+        sortedBestCase200k = bestCase200k.clone();
+        sortedWorstCase200k = worstCase200k.clone();
+        sortedAverageCase200k = averageCase200k.clone();
 
         // Bubble Sort
         Timer timer = new Timer();  // START THE TIMER
@@ -134,6 +168,84 @@ public class Tester {
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
+        
+        //bubble sort 200k
+        Timer timer = new Timer();  // 200K
+        Sort.bubble(sortedBestCase200k);
+        System.out.println("Bubble Sort");
+        System.out.println("Best Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
 
+        timer = new Timer();
+        Sort.bubble(sortedWorstCase200k);
+        System.out.println("Worst Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
+
+        timer = new Timer();
+        Sort.bubble(sortedAverageCase200k);
+        System.out.println("Average Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
+        System.out.println();
+        
+        sortedBestCase200k = bestCase200k.clone();
+        sortedWorstCase200k = worstCase200k.clone();
+        sortedAverageCase200k = averageCase200k.clone();
+
+        //selection sort 200k
+        timer = new Timer();
+        Sort.selection(sortedBestCase200k);
+        System.out.println("Selection Sort");
+        System.out.println("Best Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
+
+        timer = new Timer();
+        Sort.selection(sortedWorstCase200k);
+        System.out.println("Worst Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
+
+        timer = new Timer();
+        Sort.selection(sortedAverageCase200k);
+        System.out.println("Average Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
+        System.out.println();
+
+        sortedBestCase200k = bestCase200k.clone();
+        sortedWorstCase200k = worstCase200k.clone();
+        sortedAverageCase200k = averageCase200k.clone();
+
+        //insertion sort 200k
+        timer = new Timer();
+        Sort.insertion(sortedBestCase200k);
+        System.out.println("Insertion Sort");
+        System.out.println("Best Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
+
+        timer = new Timer();
+        Sort.insertion(sortedWorstCase200k);
+        System.out.println("Worst Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
+
+        timer = new Timer();
+        Sort.insertion(sortedAverageCase200k);
+        System.out.println("Average Case 200K");
+        System.out.println("Time:" + timer.timeElapsed());
+        System.out.print("Instructions: ");
+        System.out.println(new BigDecimal(Sort.counter).toPlainString());
     }
 }
