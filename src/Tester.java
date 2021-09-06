@@ -5,15 +5,13 @@ import java.util.List;
 public class Tester {
 
     static void generateDataSet() {
-        Data.generateBestCase(10000, "res/10KBestCase.csv");
-        // Data.generateWorstCase(10000, "res/10KWorstCase.csv");
-        // Data.generateAverageCase(10000, "res/10KAverageCase.csv");
+        Data.generateBestCase(1000000, "res/1MBestCase.csv");
+        Data.generateWorstCase(1000000, "res/1MWorstCase.csv");
+        Data.generateAverageCase(1000000, "res/1MAverageCase.csv");
         // Do the same for the 200K, 500K and 1M datasets
     }
 
-    public static void main(String[] args) {
-        // generateDataSet();
-
+    static void benchmark10K() {
         List<Integer> temp;
         int[] bestCase10k;
         int[] worstCase10k;
@@ -28,7 +26,7 @@ public class Tester {
                 .stream()
                 .mapToInt(Integer::intValue)
                 .toArray();
-        
+
         temp = Data.parse("res/10KWorstCase.csv");
         worstCase10k = temp
                 .stream()
@@ -51,7 +49,6 @@ public class Tester {
         Timer timer = new Timer();  // START THE TIMER
         Sort.bubble(sortedBestCase10k);
         System.out.println("Bubble Sort");
-        System.out.println();
         System.out.println("Best Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
@@ -134,6 +131,13 @@ public class Tester {
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
+
+
+    }
+
+    public static void main(String[] args) {
+        //generateDataSet();
+
 
     }
 }
