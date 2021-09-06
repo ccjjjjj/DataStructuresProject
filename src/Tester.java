@@ -55,6 +55,7 @@ public class Tester {
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        timer = new Timer();
         Sort.bubble(sortedWorstCase10k);
         System.out.println("Worst Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
@@ -62,6 +63,7 @@ public class Tester {
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        timer = new Timer();
         Sort.bubble(sortedAverageCase10k);
         System.out.println("Average Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
@@ -87,6 +89,7 @@ public class Tester {
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        timer = new Timer();
         Sort.selection(sortedWorstCase10k);
         System.out.println("Worst Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
@@ -94,6 +97,7 @@ public class Tester {
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        timer = new Timer();
         Sort.selection(sortedAverageCase10k);
         System.out.println("Average Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
@@ -118,6 +122,7 @@ public class Tester {
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        timer = new Timer();
         Sort.insertion(sortedWorstCase10k);
         System.out.println("Worst Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
@@ -125,13 +130,13 @@ public class Tester {
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        timer = new Timer();
         Sort.insertion(sortedAverageCase10k);
         System.out.println("Average Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
-
 
     }
 
