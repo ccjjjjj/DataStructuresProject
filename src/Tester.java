@@ -46,26 +46,26 @@ public class Tester {
         sortedAverageCase10k = averageCase10k.clone();
 
         // Bubble Sort
-        Timer timer = new Timer();  // START THE TIMER
-        Sort.bubble(sortedBestCase10k);
         System.out.println("Bubble Sort");
         System.out.println("Best Case 10K");
+        Timer timer = new Timer();  // START THE TIMER
+        Sort.bubble(sortedBestCase10k);
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        System.out.println("Worst Case 10K");
         timer = new Timer();
         Sort.bubble(sortedWorstCase10k);
-        System.out.println("Worst Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        System.out.println("Average Case 10K");
         timer = new Timer();
         Sort.bubble(sortedAverageCase10k);
-        System.out.println("Average Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
@@ -79,27 +79,27 @@ public class Tester {
         sortedAverageCase10k = averageCase10k.clone();
 
         // Selection Sort
+
+        System.out.println("Selection Sort");
         timer = new Timer();    // CREATE A NEW TIMER TO RESET THE TIME
         Sort.selection(sortedBestCase10k);
-        System.out.println("Selection Sort");
-        System.out.println();
         System.out.println("Best Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        System.out.println("Worst Case 10K");
         timer = new Timer();
         Sort.selection(sortedWorstCase10k);
-        System.out.println("Worst Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        System.out.println("Average Case 10K");
         timer = new Timer();
         Sort.selection(sortedAverageCase10k);
-        System.out.println("Average Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
@@ -113,26 +113,25 @@ public class Tester {
         sortedAverageCase10k = averageCase10k.clone();
 
         // Insertion Sort
-        timer = new Timer();    // CREATE A NEW TIMER TO RESET THE TIME
-        Sort.insertion(sortedBestCase10k);
         System.out.println("Insertion Sort");
-        System.out.println();
+        timer = new Timer();
+        Sort.insertion(sortedBestCase10k);
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        System.out.println("Worst Case 10K");
         timer = new Timer();
         Sort.insertion(sortedWorstCase10k);
-        System.out.println("Worst Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
         System.out.println();
 
+        System.out.println("Average Case 10K");
         timer = new Timer();
         Sort.insertion(sortedAverageCase10k);
-        System.out.println("Average Case 10K");
         System.out.println("Time:" + timer.timeElapsed());
         System.out.print("Instructions: ");
         System.out.println(new BigDecimal(Sort.counter).toPlainString());
